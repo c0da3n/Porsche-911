@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Logo from "../assets/Logo.svg";
 import { cn } from "../utils/cn";
 
 const Header = () => {
-  const [isClicked, setIsClicked] = useState("KO");
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language.toUpperCase();
 
-  const handleLanguageChange = (language: string) => {
-    setIsClicked(language);
+  const handleLanguageChange = (lang: "EN" | "KO") => {
+    i18n.changeLanguage(lang.toLowerCase());
   };
 
   return (
@@ -23,7 +24,7 @@ const Header = () => {
           className={cn(
             "font-semibold",
             "max-md:text-sm",
-            isClicked === "KO" ? "text-[#0c0c0c]" : "text-[#b6b6b6]"
+            currentLang === "KO" ? "text-[#0c0c0c]" : "text-[#b6b6b6]"
           )}
         >
           KO
@@ -34,7 +35,7 @@ const Header = () => {
           className={cn(
             "font-semibold",
             "max-md:text-sm",
-            isClicked === "EN" ? "text-[#0c0c0c]" : "text-[#b6b6b6]"
+            currentLang === "EN" ? "text-[#0c0c0c]" : "text-[#b6b6b6]"
           )}
         >
           EN

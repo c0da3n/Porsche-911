@@ -1,5 +1,23 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 @import "tailwindcss";
 
 button {
   cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --default-font-family: "Pretendard";
+}
+
+@layer base {
+  .hero-title {
+    @apply text-7xl max-md:text-6xl max-md:font-medium font-semibold tracking-tight text-white;
+  }
+  .subtitle {
+    @apply text-4xl max-md:text-2xl max-md:font-normal font-normal tracking-tight text-white;
+  }
 }
