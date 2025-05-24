@@ -1,4 +1,19 @@
 {
   "title": "Driven to Perfection",
-  "subtitle": "Speed, Precision, Legacy"
+  "subtitle": "Speed, Precision, Legacy",
+  "carInfo": {
+    "title": "Porsche 911 Turbo S",
+    "description": "The Porsche 911 Turbo S delivers an impressive performance with 650 horsepower and exceptional precision.\nThe active aerodynamic system maximizes aerodynamic efficiency while enhancing the bold and elegant presence of the 911 Turbo S.\nExperience the ultimate combination of extreme performance and luxurious driving with the Porsche 911 Turbo S today.",
+    "InfoData": {
+      "InfoTitle": [
+        "Curb Weight",
+        "Maximum Output",
+        "Top Speed",
+        "Fuel Economy (Rating)",
+        "CO₂ Emissions"
+      ],
+      "InfoDetail": ["1,680kg", "662hp", "330km/h", "6.8km/L (5)", "259g/km"]
+    },
+    "more": "Read More"
+  }
 }

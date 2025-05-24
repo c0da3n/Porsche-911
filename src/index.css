@@ -5,14 +5,19 @@ button {
   cursor: pointer;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 @theme {
   --default-font-family: "Pretendard";
 }
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
 @layer base {
   .hero-title {
     @apply text-7xl max-md:text-6xl max-md:font-medium font-semibold tracking-tight text-white;
@@ -23,13 +28,59 @@ html {
 }
 
 @layer components {
+  .Info {
+    @apply flex flex-row justify-between items-center w-full min-h-[32.5rem] p-16 max-md:flex-col max-md:p-6;
+  }
   .CarInfo {
-    @apply flex space-x-4 w-full min-h-[32.5rem] p-16;
+    @apply flex items-start flex-col gap-[30px] max-md:hidden;
+    .Intro-Section {
+      @apply flex flex-col gap-3;
+      p {
+        @apply whitespace-pre-line max-md:hidden;
+      }
+      h1 {
+        @apply text-4xl font-bold text-black;
+      }
+    }
+    .Info-Section {
+      @apply flex gap-8;
+      div {
+        @apply flex flex-col gap-2;
+      }
+      h4 {
+        @apply font-semibold text-xl;
+      }
+      p {
+        @apply font-normal;
+      }
+    }
+    button {
+      @apply flex flex-row space-x-0.5 border-[1px] px-4 py-2.5 rounded-[12px];
+      p {
+        @apply font-normal tracking-tight;
+      }
+    }
+  }
+  .MobileCarInfo {
+    @apply hidden max-md:block;
     div {
-      section {
-        @apply flex flex-col gap-[30px];
-        h1 {
-          @apply text-4xl font-bold text-black;
+      @apply flex flex-col text-center gap-3 mb-7;
+      h1 {
+        @apply text-2xl font-bold;
+      }
+      p {
+        @apply text-sm leading-relaxed text-gray-700;
+      }
+      span {
+        @apply flex justify-around items-center;
+        h6 {
+          @apply text-[0.8rem] font-semibold;
+        }
+        p {
+          @apply text-sm font-light;
+        }
+        div {
+          @apply flex flex-col;
         }
       }
     }

@@ -1,13 +1,15 @@
 import Header from "./components/Header";
 import Background from "./assets/Background.png";
 import { useTranslation } from "react-i18next";
-import CarInfo from "./components/CarInfo";
 import ScrollToTop from "./components/ScrollToTop";
+import CarInfo from "./components/CarInfo";
+import CarImage from "./components/CarImage";
+import MobileCarInfo from "./components/MobileCarInfo";
 
 const App = () => {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-y-auto no-scrollbar">
       <Header />
       <main
         className="relative h-[calc(100vh-80px)] max-w-full bg-cover bg-center"
@@ -22,8 +24,10 @@ const App = () => {
           <p className="text-white font-medium  text-base">Read More</p>
         </button>
       </main>
-      <div className="CarInfo">
+      <div className="Info">
         <CarInfo />
+        <MobileCarInfo />
+        <CarImage />
       </div>
       <ScrollToTop />
     </div>
