@@ -27,6 +27,10 @@ button {
   }
 }
 
+.background {
+  @apply relative h-[calc(100vh-80px)] max-w-full bg-cover bg-center bg-[url(src/assets/Background.png)];
+}
+
 @layer components {
   .Info {
     @apply flex flex-row justify-between items-center w-full min-h-[32.5rem] p-16 max-md:flex-col max-md:p-6;
@@ -82,6 +86,25 @@ button {
         div {
           @apply flex flex-col;
         }
+      }
+    }
+  }
+  .Sub {
+    @apply flex flex-col justify-between w-full min-h-[40rem] py-[3.75rem] px-5 bg-cover bg-center bg-[url(src/assets/SubBackground.png)];
+
+    .Sub-Title {
+      @apply flex flex-col items-start max-md:items-center space-y-2.5;
+      h1 {
+        @apply text-6xl font-bold text-white tracking-tight max-md:text-4xl;
+      }
+      h4 {
+        @apply text-3xl font-normal text-white tracking-tight max-md:text-2xl;
+      }
+    }
+    .Sub-Subtitle {
+      @apply flex flex-col items-start max-md:items-center max-md:text-center space-y-2.5;
+      p {
+        @apply text-2xl font-light text-white tracking-tight max-md:text-lg;
       }
     }
   }
